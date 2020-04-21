@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-left">Detail</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissDetail()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <!-- <h3 align="center">Detail Service</h3>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><h5>Service No.{{id_servis}}</h5></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <table>
+          <tr>
+            <td>Date Of Service</td>
+            <td> : </td>
+            <td>{{data.date_book}}</td>
+          </tr>
+          <tr>
+            <td>Mechanic Name</td>
+            <td> :</td>
+            <td>{{data.nama_mecanic}}</td>
+          </tr>
+          <ng-container *ngIf="data.flag_status==null;else else1">
+          <tr>
+            <td>Status</td>
+            <td> : </td>
+            <td><i>waiting for Schedule . . .</i></td>
+          </tr>
+          </ng-container>
+          <ng-template #else1>
+            <tr>
+              <td>Service Time</td>
+              <td> : </td>
+              <td><i>{{data.time}}</i></td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td> : </td>
+              <ng-container *ngIf="data.flag_status==1; else else2">
+                <td><i>waiting for you . . .</i></td>
+              </ng-container>
+              <ng-template #else2>
+                <ng-container *ngIf="data.flag_status==2; else else3">
+                  <td><i>your car in service . . .</i></td>
+                </ng-container>
+                <ng-template #else3>
+                  <td><i>Done . . .</i></td>
+                </ng-template>
+              </ng-template>
+            </tr>
+          </ng-template>
+        </table>
+      </ion-card-content>
+    </ion-card> -->
+
+    <ion-card id="map"  class="transparent-card">
+      <ion-card-header>Location
+        <div id="floating-panel">
+          <b>Start: </b>
+          <select [(ngModel)]="start" id="start" (change)="calculateAndDisplayRoute()">
+            <option value="chicago, il">Chicago</option>
+            <option value="st louis, mo">St Louis</option>
+            <option value="joplin, mo">Joplin, MO</option>
+            <option value="oklahoma city, ok">Oklahoma City</option>
+            <option value="amarillo, tx">Amarillo</option>
+            <option value="gallup, nm">Gallup, NM</option>
+            <option value="flagstaff, az">Flagstaff, AZ</option>
+            <option value="winona, az">Winona</option>
+            <option value="kingman, az">Kingman</option>
+            <option value="barstow, ca">Barstow</option>
+            <option value="san bernardino, ca">San Bernardino</option>
+            <option value="los angeles, ca">Los Angeles</option>
+          </select><br>
+          <b>End: </b>
+          <select [(ngModel)]="end" id="end" (change)="calculateAndDisplayRoute()">
+            <option value="chicago, il">Chicago</option>
+            <option value="st louis, mo">St Louis</option>
+            <option value="joplin, mo">Joplin, MO</option>
+            <option value="oklahoma city, ok">Oklahoma City</option>
+            <option value="amarillo, tx">Amarillo</option>
+            <option value="gallup, nm">Gallup, NM</option>
+            <option value="flagstaff, az">Flagstaff, AZ</option>
+            <option value="winona, az">Winona</option>
+            <option value="kingman, az">Kingman</option>
+            <option value="barstow, ca">Barstow</option>
+            <option value="san bernardino, ca">San Bernardino</option>
+            <option value="los angeles, ca">Los Angeles</option>
+          </select>
+        </div>
+      </ion-card-header>
+    <div #map="" id="map"></div>
+    </ion-card>
+</ion-content>

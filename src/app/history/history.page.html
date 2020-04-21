@@ -1,0 +1,68 @@
+	<ion-header [translucent]="true">
+		<ion-toolbar>
+			<ion-buttons slot="start">
+				<ion-menu-button></ion-menu-button>
+			</ion-buttons>
+			<ion-title>Ngebenkel App</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content class="ion-padding">
+		<ng-container *ngIf="history?.length > 0;else else2">
+			<div class="item" align="center"><h3>History</h3></div>
+				<ion-card *ngFor = "let h of history">
+					<ion-card-header>
+						<ion-card-title>Service No.{{h.id_service}}</ion-card-title>
+					</ion-card-header>
+				
+					<ion-card-content>
+						<table>
+							<tr>
+								<td>Date Of Service</td>
+								<td> : </td>
+								<td>{{h.date_book}}</td>
+							</tr>
+							<tr>
+								<td>Mechanic Name</td>
+								<td> :</td>
+								<td>{{h.nama_mecanic}}</td>
+							</tr>
+							<ng-container *ngIf="h.flag_status===null;else else1">
+							<tr>
+								<td>Status</td>
+								<td> : </td>
+								<td><i>waiting for Schedule . . .</i></td>
+							</tr>
+							</ng-container>
+							<ng-template #else1>
+								<tr>
+									<td>Service Time</td>
+									<td> : </td>
+									<td><i>{{h.time}}</i></td>
+								</tr>
+								<tr>
+									<td>Status</td>
+									<td> : </td>
+									<ng-container *ngIf="h.flag_status==1; else else2">
+										<td><i>waiting for you . . .</i></td>
+									</ng-container>
+									<ng-template #else2>
+										<ng-container *ngIf="h.flag_status==2; else else3">
+											<td><i>your car in service . . .</i></td>
+										</ng-container>
+										<ng-template #else3>
+											<td><i>Done . . .</i></td>
+										</ng-template>
+									</ng-template>
+								</tr>
+							</ng-template>
+						</table>
+						<div align="right">
+							<ion-button size="small" color="primary" (click)="DetailModal(h.id_service)">detail</ion-button>
+						</div>
+					</ion-card-content>
+				</ion-card>
+		</ng-container>
+		<ng-template #else2>
+			<h4 align="center"><i>Oops, Sorry You Don't Have History. . .</i></h4>
+		</ng-template>
+	</ion-content>

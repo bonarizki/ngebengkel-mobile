@@ -1,0 +1,24 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ngebengkel
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ngebenkel App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div id="container">
+    <strong>Selamat datang, {{Username}}</strong><br>
+    <p>Welcome In Ngebengkel App</p>
+    <!-- <ion-button color="danger" (click)="logout()" >Logout</ion-button> -->
+  </div>
+</ion-content>

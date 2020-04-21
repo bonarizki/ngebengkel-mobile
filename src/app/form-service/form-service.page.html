@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ngebenkel App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="item" align="center"><h3>Form Service</h3></div>
+    <ion-list>
+        <form [formGroup]="FormService" (ngSubmit)="booking()">
+          <ion-item>
+            <div color="dark"  slot="start">
+              <ion-icon slot="icon-only" name="calendar" ></ion-icon>
+            </div>
+            <ion-datetime  displayFormat="YYYY-MM-DD"  [ngModel]="date" placeholder="Tanggal Service" name="date" formControlName="date"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <div color="dark"  slot="start">
+              <ion-icon slot="icon-only" name="book" ></ion-icon>
+            </div>
+            <ion-select name="id_mecanic" expand="block" placeholder="Pilih Mecanic" formControlName="id_mecanic">
+              <ion-select-option *ngFor = "let m of mecanic" value="{{m.id_mecanic}}">{{m.nama_mecanic}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <div color="dark"  slot="start">
+              <ion-icon slot="icon-only" name="book" ></ion-icon>
+            </div>
+            <ion-input placeholder="Keluhan" name="complaint" formControlName="complaint"></ion-input>
+          </ion-item>
+          <ion-button size="big" type="submit" expand="block"  color="primary" shape="round" [disabled]="!FormService.valid">Booking</ion-button>
+        </form>
+      <!-- <ion-item>
+        <ion-label color="primary" floating></ion-label>
+        <ion-datetime  display-timezone="utc" [ngModel]="date" placeholder="Tanggal Service"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating></ion-label>
+        <ion-input placeholder="Keluhan"></ion-input>
+      </ion-item>
+      <ion-button type="submit" expand="block" color="primary" >Booking</ion-button> -->
+    </ion-list>
+</ion-content>
+

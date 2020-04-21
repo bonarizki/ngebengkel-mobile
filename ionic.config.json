@@ -1,5 +1,7 @@
 {
   "name": "ngebengkel",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
