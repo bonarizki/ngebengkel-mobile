@@ -36,6 +36,10 @@ export class FormServicePage implements OnInit {
         date:['',Validators.required],
         complaint:['',Validators.required],
         id_mecanic:['',Validators.required],
+        address:['',Validators.required],
+        city:['',Validators.required],
+        jenis_kendaraan:['',Validators.required],
+        plat:['',Validators.required],
     });
     this.driver();
   }

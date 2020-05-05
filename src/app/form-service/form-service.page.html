@@ -31,6 +31,30 @@
             </div>
             <ion-input placeholder="Keluhan" name="complaint" formControlName="complaint"></ion-input>
           </ion-item>
+          <ion-item>
+            <div color="dark"  slot="start">
+              <ion-icon slot="icon-only" name="book" ></ion-icon>
+            </div>
+            <ion-input placeholder="Plat Nomor" name="plat" formControlName="plat"></ion-input>
+          </ion-item>
+          <ion-item>
+            <div color="dark"  slot="start">
+              <ion-icon slot="icon-only" name="book" ></ion-icon>
+            </div>
+            <ion-input placeholder="Jenis Kendaraan" name="jenis_kendaraan" formControlName="jenis_kendaraan"></ion-input>
+          </ion-item>
+          <ion-item>
+            <div color="dark"  slot="start">
+              <ion-icon slot="icon-only" name="book" ></ion-icon>
+            </div>
+            <ion-input placeholder="Alamat Antar" name="address" formControlName="address"></ion-input>
+          </ion-item>
+          <ion-item>
+            <div color="dark"  slot="start">
+              <ion-icon slot="icon-only" name="book" ></ion-icon>
+            </div>
+            <ion-input placeholder="Kota / Provinsi" name="city" formControlName="city"></ion-input>
+          </ion-item>
           <ion-button size="big" type="submit" expand="block"  color="primary" shape="round" [disabled]="!FormService.valid">Booking</ion-button>
         </form>
       <!-- <ion-item>

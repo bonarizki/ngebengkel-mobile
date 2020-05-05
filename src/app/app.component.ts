@@ -5,6 +5,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Platform, NavController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
 import { ServiceService } from './services/service.service';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-root',
@@ -15,8 +17,13 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
+      title: 'Home',
+      url: '/dashboard',
+      icon: 'home'
+    },
+    {
       title: 'About Us',
-      url: '/folder/Inbox',
+      url: '/aboutus',
       icon: 'people'
     },
     {
@@ -28,7 +35,12 @@ export class AppComponent implements OnInit {
       title: 'History',
       url: '/history',
       icon: 'time'
-    }
+    },
+    // {
+    //   title: 'Contact Us',
+    //   url: '/history',
+    //   icon: 'call'
+    // }
   ];
   Username: any;
   Email: any;
@@ -41,6 +53,7 @@ export class AppComponent implements OnInit {
     private serviceService: ServiceService,
     private navCtrl: NavController,
     public loadingController: LoadingController,
+    private alertCtrl:AlertController
   ) {
     this.initializeApp();
   }
@@ -77,6 +90,18 @@ export class AppComponent implements OnInit {
           this.navCtrl.navigateRoot(['login']);
         }
     });
+  }
+
+  async alertlogout() {
+    let alert = await this.alertCtrl.create({
+      message: 'Terimakasih Sudah Menggunakan Aplikasi Ngebengkel',
+      buttons: [{text: 'OK',
+                  handler: () => {
+                  this.logout();
+                }}],
+      cssClass: 'my-class'
+    });
+    alert.present();
   }
 
   async logout(){

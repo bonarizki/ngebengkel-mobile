@@ -118,7 +118,11 @@ export class ServiceService {
       'date_book':dateFormat,
       'complaint':credentials.complaint,
       'id_mecanic':credentials.id_mecanic,
-      'id_user':id
+      'id_user':id,
+      'address':credentials.address,
+      'city':credentials.city,
+      'plat':credentials.plat,
+      'jenis_kendaraan':credentials.jenis_kendaraan,
     }
     return this.http.post(this.API_URL + type , newcredentials, { headers: headers }).pipe(
       tap(Data => {

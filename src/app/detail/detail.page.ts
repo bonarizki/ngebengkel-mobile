@@ -13,15 +13,8 @@ declare var google;
 })
 export class DetailPage implements OnInit {
 
-  @ViewChild('map',{static: true}) mapElement: ElementRef;
-  map: any;
-  start = 'chicago, il';
-  end = 'chicago, il';
-  directionsService = new google.maps.DirectionsService;
-  directionsDisplay = new google.maps.DirectionsRenderer;
   id_servis : any;
   data : any;
-  nativeElement:any
   constructor(
     public navParams: NavParams,
     private ServiceService : ServiceService,
@@ -34,7 +27,6 @@ export class DetailPage implements OnInit {
   ngOnInit() {
     this.id_servis = this.navParams.get('id');
     this.getDetail(this.id_servis);
-    this.initMap();
   }
   
 
@@ -42,6 +34,7 @@ export class DetailPage implements OnInit {
     this.ServiceService.getDetail('detailHistory',id).subscribe(
       (data:any)=>{
         this.data=data.data;
+        console.log(data)
     })
   }
 
@@ -49,32 +42,6 @@ export class DetailPage implements OnInit {
     this.modalController.dismiss();
   }
 
-  ionViewDidLoad(){
-    this.initMap();
-  }
-
-  initMap() {
-    this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 7,
-      center: {lat: 41.85, lng: -87.65}
-    });
-    this.directionsDisplay.setMap(this.map);
-    console.log(this.directionsDisplay)
-    
-  }
-
-  calculateAndDisplayRoute() {
-    this.directionsService.route({
-      origin: this.start,
-      destination: this.end,
-      travelMode: 'DRIVING'
-    }, (response, status) => {
-      if (status === 'OK') {
-        this.directionsDisplay.setDirections(response);
-      } else {
-        window.alert('Directions request failed due to ' + status);
-      }
-    });
-  }
+  
 
 }

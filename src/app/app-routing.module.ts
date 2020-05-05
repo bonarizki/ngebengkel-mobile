@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'detail',
     canActivate: [AuthGuard],
     loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
+    path: 'aboutus',
+    loadChildren: () => import('./aboutus/aboutus.module').then( m => m.AboutusPageModule)
   }
 ];
 
