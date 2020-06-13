@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { RegisterPageModule } from './register/register.module';
 import { DetailPageModule } from './detail/detail.module';
+import { LocationPageModule } from './location/location.module';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
 
@@ -23,7 +24,8 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     AppRoutingModule,
     HttpClientModule,
     RegisterPageModule,
-    DetailPageModule
+    DetailPageModule,
+    LocationPageModule
   ],
   providers: [
     StatusBar,

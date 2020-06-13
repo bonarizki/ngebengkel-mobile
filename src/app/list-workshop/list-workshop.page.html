@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ngebenkel App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header *ngFor="let item of toko;">
+    <ion-label>{{item}}</ion-label>
+    <ion-button (click)="DetailLocation(item)">Maps</ion-button>
+  </ion-list-header>
+  
+</ion-content>
+

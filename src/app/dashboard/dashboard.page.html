@@ -28,4 +28,37 @@
     <p>Welcome In Ngebengkel App</p>
     <!-- <ion-button color="danger" (click)="logout()" >Logout</ion-button> -->
   </div>
+  <div style="margin-top: 100px;">
+    <ion-grid>
+      <ion-row > 
+        <ion-col size="6">
+          <button (click)="serviceroute()">
+            <img  src="../../assets/service.jpeg" title="Service" height="100px" width="100px"/>
+          </button>
+          <p>Service</p>
+        </ion-col>
+        <ion-col>
+          <button (click)="historyroute()">
+            <img  src="../../assets/history.jpeg" title="History" height="100px" width="100px"/>
+          </button>
+          <p>Hisory</p>
+        </ion-col>
+      </ion-row>
+      <ion-row > 
+        <ion-col size="6">
+          <button (click)="aboutusroute()">
+            <img  src="../../assets/aboutus.jpg" title="Service" height="100px" width="100px"/>
+          </button>
+          <p>About Us</p>
+        </ion-col>
+        <ion-col>
+          <button (click)="workshoproute()">
+            <img  src="../../assets/workshop.png" title="history" height="100px" width="100px"/>
+          </button>
+          <p>Workshop</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
 </ion-content>

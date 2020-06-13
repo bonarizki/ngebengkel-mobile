@@ -44,6 +44,14 @@ const routes: Routes = [
   {
     path: 'aboutus',
     loadChildren: () => import('./aboutus/aboutus.module').then( m => m.AboutusPageModule)
+  },
+  {
+    path: 'location',
+    loadChildren: () => import('./location/location.module').then( m => m.LocationPageModule)
+  },
+  {
+    path: 'list-workshop',
+    loadChildren: () => import('./list-workshop/list-workshop.module').then( m => m.ListWorkshopPageModule)
   }
 ];
 

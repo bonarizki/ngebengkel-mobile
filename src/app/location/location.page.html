@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-left">Detail Bengkel</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissDetail()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 align="center">{{toko}}</h1>
+  <div class="map">
+    <ng-container *ngIf="toko==='Riverside Bengkel'">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.420844684917!2d106.80748861435046!3d-6.208090462538818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6afbbeec1a1%3A0xc4836d2edb8db19e!2sRiverside%20Bengkel!5e0!3m2!1sid!2sid!4v1592064799805!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </ng-container>
+    <ng-container *ngIf="toko==='Sejahtera Motor'">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.382988331602!2d106.81063131744384!3d-6.2131155999999965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6abe572f2bf%3A0x6ec17c5c8d43d8a6!2sSejahtera%20Motor!5e0!3m2!1sid!2sid!4v1592065213929!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </ng-container>
+    <ng-container *ngIf="toko==='Dua Sekawan'">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4118485248246!2d106.80985231744384!3d-6.20928499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6abbc3ac3b3%3A0xd72588cc5388b50e!2sDua%20Sekawan!5e0!3m2!1sid!2sid!4v1592065307159!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </ng-container>
+  </div>
+</ion-content>
